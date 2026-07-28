@@ -144,8 +144,54 @@ canvas:focus-visible {
 .header-actions {
   display: flex;
   gap: 24px;
-  align-items: flex-start;
+  align-items: center;
   pointer-events: auto;
+}
+
+.mint-attribution {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 29px;
+  padding: 7px 10px 7px 11px;
+  border: 1px solid rgba(37, 35, 31, 0.12);
+  border-radius: 999px;
+  background: rgba(246, 241, 231, 0.72);
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  font-size: 7px;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.mint-attribution:hover {
+  border-color: rgba(37, 35, 31, 0.24);
+  background: rgba(246, 241, 231, 0.94);
+  transform: translateY(-1px);
+}
+
+.mint-attribution__logo {
+  width: 33px;
+  height: auto;
+}
+
+.mint-attribution__arrow {
+  margin-left: 1px;
+  font-size: 10px;
+  font-weight: 420;
+  transition: transform 180ms ease;
+}
+
+.mint-attribution:hover .mint-attribution__arrow {
+  transform: translate3d(1px, -1px, 0);
 }
 
 .browse-caption {
@@ -851,6 +897,12 @@ canvas:focus-visible {
 
   .header-actions {
     gap: 0;
+  }
+
+  .mint-attribution {
+    gap: 7px;
+    min-height: 27px;
+    padding: 6px 9px;
   }
 
   .experience-status {

@@ -37,6 +37,9 @@ test("server-renders the complete editorial bookshelf shell", async () => {
   assert.match(html, /01 CONTINUOUS SHELF/);
   assert.match(html, /data-testid="shelf-canvas"/);
   assert.match(html, /data-testid="inspect-active"/);
+  assert.match(html, /data-testid="mint-attribution"/);
+  assert.match(html, /href="https:\/\/mint\.gg"/);
+  assert.match(html, /Made with Mint\. Visit mint\.gg/);
   assert.match(html, /Poor Charlie’s Almanack/);
   assert.match(html, /Browse to High Growth Handbook/);
   const shelfOrder = [
