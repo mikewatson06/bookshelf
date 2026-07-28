@@ -208,18 +208,30 @@ export function ProgressLibrary() {
                 </div>
               </dl>
 
-              <a
-                className="official-link"
-                data-testid="official-link"
-                href={selectedBook.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>
-                  {selectedBook.linkLabel ?? siteConfig.bookLinkLabel}
-                </span>
-                <span aria-hidden="true">↗</span>
-              </a>
+              <div className="book-links">
+                <a
+                  className="official-link"
+                  data-testid="amazon-link"
+                  href={selectedBook.amazonUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span>{siteConfig.amazonLinkLabel}</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  className="publisher-link"
+                  data-testid="official-link"
+                  href={selectedBook.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span>
+                    {selectedBook.linkLabel ?? siteConfig.bookLinkLabel}
+                  </span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
 
             <div className="focus-controls" aria-label="Inspection controls">

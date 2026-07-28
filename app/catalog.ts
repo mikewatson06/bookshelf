@@ -30,6 +30,7 @@ export type CatalogBook = {
   format: string;
   availability: string;
   url: string;
+  amazonUrl: string;
   cover: string;
   accent: string;
   ink: string;
@@ -59,6 +60,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover · 396 pages",
     availability: "Available now · softcover also available",
     url: "https://press.stripe.com/poor-charlies-almanack",
+    amazonUrl:
+      "https://www.amazon.com/Poor-Charlies-Almanack-Essential-Charles/dp/1953953239",
     cover: "#6f2130",
     accent: "#d5a756",
     ink: "#f4ead7",
@@ -78,6 +81,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover · illustrated",
     availability: "Available now",
     url: "https://press.stripe.com/maintenance-part-one",
+    amazonUrl:
+      "https://www.amazon.com/Maintenance-Everything-Part-One/dp/1953953492/",
     cover: "#4d746d",
     accent: "#b36b43",
     ink: "#f0e5cf",
@@ -98,6 +103,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover · illustrated",
     availability: "Available now",
     url: "https://press.stripe.com/origins-of-efficiency",
+    amazonUrl:
+      "https://www.amazon.com/Origins-Efficiency-Brian-Potter/dp/1953953522/",
     cover: "#e8ddc6",
     accent: "#2457a6",
     ink: "#bf493f",
@@ -117,6 +124,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover · 2019–2025",
     availability: "Available now",
     url: "https://press.stripe.com/scaling",
+    amazonUrl:
+      "https://www.amazon.com/Scaling-Era-Oral-History-2019-2025/dp/1953953557/",
     cover: "#162c55",
     accent: "#9eb4e8",
     ink: "#f1eee5",
@@ -137,6 +146,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/boom",
+    amazonUrl:
+      "https://www.amazon.com/Boom-Bubbles-Stagnation-Byrne-Hobart/dp/1953953476",
     cover: "#262421",
     accent: "#f16f5b",
     ink: "#d9edf0",
@@ -157,6 +168,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover · workbook resources",
     availability: "Available now",
     url: "https://press.stripe.com/scaling-people",
+    amazonUrl:
+      "https://www.amazon.com/Scaling-People-Tactics-Management-Building/dp/1953953212",
     cover: "#d36e5d",
     accent: "#172f49",
     ink: "#f8ecdc",
@@ -176,6 +189,7 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/pieces-of-the-action",
+    amazonUrl: "https://www.amazon.com/dp/1953953204/",
     cover: "#626a49",
     accent: "#9c3d39",
     ink: "#eee5cf",
@@ -195,6 +209,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/where-is-my-flying-car",
+    amazonUrl:
+      "https://www.amazon.com/Where-Flying-Car-Storrs-Hall/dp/1953953182",
     cover: "#76a9c5",
     accent: "#e6673c",
     ink: "#f7f3e8",
@@ -214,6 +230,7 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/the-big-score",
+    amazonUrl: "https://www.amazon.com/dp/1953953166",
     cover: "#25282a",
     accent: "#c84a3f",
     ink: "#eee4ce",
@@ -233,6 +250,7 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/scientific-freedom",
+    amazonUrl: "https://www.amazon.com/dp/0578675919/",
     cover: "#4c3970",
     accent: "#9ad3bf",
     ink: "#f3ecdb",
@@ -252,6 +270,7 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/working-in-public",
+    amazonUrl: "https://www.amazon.com/dp/0578675862/",
     cover: "#1d4fa8",
     accent: "#d6df45",
     ink: "#f3efe3",
@@ -271,6 +290,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/the-art-of-doing-science-and-engineering",
+    amazonUrl:
+      "https://www.amazon.com/Art-Doing-Science-Engineering-Learning/dp/1732265178/ref=sr_1_1?dchild=1&keywords=The+Art+of+Doing+Science+and+Engineering&qid=1590087581&sr=8-1",
     cover: "#bd5a34",
     accent: "#252321",
     ink: "#f0e5cf",
@@ -290,6 +311,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover · illustrated journal",
     availability: "Available now",
     url: "https://press.stripe.com/the-making-of-prince-of-persia",
+    amazonUrl:
+      "https://smile.amazon.com/gp/product/0578627310?pf_rd_r=HMREHVABQXQXVW97F1V0&pf_rd_p=ab873d20-a0ca-439b-ac45-cd78f07a84d8",
     cover: "#d8bd8c",
     accent: "#8e2f36",
     ink: "#272523",
@@ -309,6 +332,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/get-together",
+    amazonUrl:
+      "https://www.amazon.com/Get-Together-Build-Community-People/dp/1732265194/ref=sr_1_6?keywords=get+together+bailey+richardson&qid=1562594471&s=gateway&sr=8-6",
     cover: "#e6bc39",
     accent: "#8f2f45",
     ink: "#244a6d",
@@ -328,6 +353,7 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/an-elegant-puzzle",
+    amazonUrl: "https://www.amazon.com/dp/1732265186",
     cover: "#d7d8d4",
     accent: "#30639d",
     ink: "#242629",
@@ -347,6 +373,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/the-revolt-of-the-public",
+    amazonUrl:
+      "https://www.amazon.com/Revolt-Public-Crisis-Authority-Millennium/dp/1732265143/ref=sr_1_1?ie=UTF8&qid=1541823320&sr=8-1&keywords=revolt+of+the+public",
     cover: "#e7e1d3",
     accent: "#d44c40",
     ink: "#212121",
@@ -366,6 +394,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/stubborn-attachments",
+    amazonUrl:
+      "https://www.amazon.com/Stubborn-Attachments-Prosperous-Responsible-Individuals/dp/1732265135/ref=sr_1_1?s=books&ie=UTF8&qid=1534253238&sr=1-1&keywords=stubborn+attachments",
     cover: "#365943",
     accent: "#c7a45e",
     ink: "#eee7d6",
@@ -385,6 +415,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/the-dream-machine",
+    amazonUrl:
+      "https://www.amazon.com/Dream-Machine-M-Mitchell-Waldrop/dp/1732265119/ref=sr_1_4?s=books&ie=UTF8&qid=1534249753&sr=1-4&keywords=the+dream+machine",
     cover: "#9a8ab8",
     accent: "#f0b154",
     ink: "#f5eedf",
@@ -404,6 +436,8 @@ export const catalog: CatalogBook[] = ([
     format: "Hardcover",
     availability: "Available now",
     url: "https://press.stripe.com/high-growth-handbook",
+    amazonUrl:
+      "https://www.amazon.com/High-Growth-Handbook-Elad-Gil/dp/1732265100",
     cover: "#1c304b",
     accent: "#c34d43",
     ink: "#f1e7d4",

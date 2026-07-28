@@ -178,6 +178,32 @@ test("restores colored foil artwork from edition coverage maps", async () => {
   );
 });
 
+test("provides an Amazon purchase link for every catalog book", async () => {
+  const { catalog } = await import(
+    new URL("../app/catalog.ts", import.meta.url)
+  );
+
+  assert.equal(catalog.length, 19);
+  assert.equal(
+    new Set(catalog.map((book) => book.amazonUrl)).size,
+    catalog.length,
+  );
+  for (const book of catalog) {
+    assert.match(
+      book.amazonUrl,
+      /^https:\/\/(?:www|smile)\.amazon\.com\//,
+      `${book.id} should use an Amazon product URL`,
+    );
+  }
+
+  const detailsSource = await readFile(
+    new URL("../app/ProgressLibrary.tsx", import.meta.url),
+    "utf8",
+  );
+  assert.match(detailsSource, /data-testid="amazon-link"/);
+  assert.match(detailsSource, /href=\{selectedBook\.amazonUrl\}/);
+});
+
 test("keeps every book footprint separated throughout browse and focus routes", async () => {
   const [
     { catalog },

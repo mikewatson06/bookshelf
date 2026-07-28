@@ -9,7 +9,8 @@ export const siteConfig = {
   coverImprint: "THE COMPLETE SHELF",
   coverTagline: "AN INTERACTIVE LIBRARY",
   spineMark: "CS",
-  bookLinkLabel: "View book",
+  amazonLinkLabel: "Purchase on Amazon",
+  bookLinkLabel: "View at Stripe Press",
   socialImageAlt:
     "The Complete Shelf, with tactile abstract hardcovers and one book pulled forward on a walnut shelf.",
   independentNote:
