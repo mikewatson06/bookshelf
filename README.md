@@ -1,109 +1,85 @@
-# The Complete Shelf
+# The Valley Shelf – Antelope Valley Intelligence
 
-An independent Three.js editorial bookshelf. The included demo catalog features
-nineteen Stripe Press titles, while the application is designed to be forked
-and filled with books of your own.
+A premium interactive 3D bookshelf of market reports, neighborhood guides, and strategy playbooks for the Antelope Valley.
 
-This project is not affiliated with or endorsed by Stripe. “Stripe” and
-“Stripe Press” are trademarks of their respective owner.
+Built by **Mike Watson** (mikewatsonrealtor.com) on top of the open-source [Complete Shelf](https://github.com/mintdotgg/bookshelf) project (Three.js + Next.js recreation of the Stripe Press experience).
+
+This is not affiliated with Stripe. The underlying engine remains the independent Complete Shelf open-source project.
 
 ## Features
 
-- Drag, scroll, use arrow keys, or select a shelf tick to browse.
-- Pull a volume forward, then orbit, pan, zoom, and reset the inspection view.
-- Generate a deterministic procedural hardcover from catalog metadata.
-- Optionally replace a generated front cover with contributor-owned artwork.
-- Preserve a working shelf when optional images or edition assets are absent.
-- Respect reduced-motion preferences and keyboard navigation.
+- Continuous horizontal 3D shelf with drag, scroll, arrow keys, and tick navigation
+- Click any volume to pull it forward, then orbit / pan / zoom for inspection
+- Deterministic procedural hardcovers (cloth texture, gold accents, motif art)
+- Optional real cover images under `public/books/<id>/cover.webp`
+- Soft studio lighting, realistic shadows, warm cream environment
+- Clean editorial typography and “Mike Watson · Antelope Valley” branding
+
+## Catalog (12 volumes)
+
+1. **2026 Antelope Valley Market Report** — Annual Intelligence  
+2. **Lancaster Pricing Playbook** — City Guides  
+3. **Palmdale & Quartz Hill** — Neighborhood Series  
+4. **Solar + Energy Homes** — Special Reports  
+5. **First-Time Buyer Handbook** — Client Resources  
+6. **Seller’s Playbook 2026** — Strategy Series  
+7. **Neighborhood Guides** — Local Intelligence  
+8. **Closed Transactions Yearbook** — Track Record  
+9. **Prop 19 & Tax Strategies** — Tax & Legal  
+10. **AV Investment Properties** — Investor Series  
+11. **Home Energy Systems** — Special Reports  
+12. **The Watson Process** — About the Work  
 
 ## Quick start
 
 Requires Node.js 22.13 or newer.
 
 ```bash
+git clone https://github.com/mikewatson06/bookshelf.git
+cd bookshelf
 npm ci
 npm run dev
 ```
 
-Before submitting a change, run:
+Open http://localhost:3000
+
+Before committing changes:
 
 ```bash
 npm run check
 npm run security:audit
 ```
 
-## Add your own books
+## Customization
 
-The short version:
+- **Books**: edit `app/catalog.ts`
+- **Branding / labels**: edit `app/site-config.ts`
+- **Cover art**: drop images at `public/books/<id>/cover.webp` and set `coverImage`
+- **Engine / lighting / motion**: `app/ShelfEngine.ts`, `app/cover-art.ts`, `app/book-motion.ts`
 
-1. Add an object to [`app/catalog.ts`](app/catalog.ts).
-2. Optionally put a cover image at
-   `public/books/<book-id>/cover.webp` and set
-   `coverImage: "/books/<book-id>/cover.webp"`.
-3. Edit [`app/site-config.ts`](app/site-config.ts) if you are replacing the demo
-   collection or branding.
-4. Run `npm run check`.
+No cover image is required. Title, author, palette (`cover` / `accent` / `ink`), and motif produce a complete procedural hardcover.
 
-No cover image is required. The title, author, palette, and motif in the catalog
-are enough to produce a complete procedural hardcover.
-
-See [Adding books](docs/adding-books.md) for the full field reference, a
-copy-paste example, image guidance, ordering behavior, and troubleshooting.
-
-## Assets and intellectual property
-
-The open-source distribution intentionally excludes downloaded Stripe Press
-geometry, cover textures, compiled site JavaScript, page captures, PDFs, and
-archives. The optional local adapter still works for a checkout whose owner has
-separately obtained the necessary rights, but `public/assets/stripe-press/` is
-gitignored and is not required by the application.
-
-Contributor-owned cover images belong under `public/books/`. Only commit art,
-quotes, descriptions, and other material that you created or are authorized to
-redistribute. Public availability is not the same as an open-source license.
-
-See [Third-party notices](THIRD_PARTY_NOTICES.md) for details.
+See [docs/adding-books.md](docs/adding-books.md) for the full field reference.
 
 ## Project structure
 
-- `app/catalog.ts` — book metadata, palette, dimensions, and optional covers
-- `app/site-config.ts` — collection-level title, labels, and metadata
-- `app/ShelfEngine.ts` — renderer, shelf layout, input, animation, and assets
-- `app/cover-art.ts` — deterministic procedural cover generator
-- `app/book-motion.ts` — collision-safe browse and focus poses
-- `public/books/` — contributor-owned cover images
-- `tests/` — server-render and shelf-motion regression tests
+- `app/catalog.ts` — the 12 Valley Shelf volumes
+- `app/site-config.ts` — “The Valley Shelf” branding
+- `app/ShelfEngine.ts` — Three.js renderer, shelf layout, input, animation
+- `app/cover-art.ts` — procedural hardcover generator
+- `app/book-motion.ts` — collision-safe poses
+- `public/books/` — optional real cover images
 
-For a detailed explanation of the object hierarchy, state machine, easing,
-damping, collision safety, camera framing, performance decisions, and tuning
-knobs, read [Motion, objects, and animation feel](docs/animation-system/README.md).
+## Integration path
 
-The package remains marked `"private": true` to prevent accidental publication
-to npm. This does not prevent the source repository from being public.
+This fork is ready to be:
 
-## Deployment
+1. Deployed standalone (Vercel / any Node host), or
+2. Embedded / linked from mikewatsonrealtor.com as “The Valley Shelf”.
 
-Local development does not require a deployment account. If you connect the
-checkout to OpenAI Sites, the integration creates `.openai/hosting.json`.
-That machine-specific project association is gitignored so forks select their
-own deployment target. See [the local deployment note](.openai/README.md).
+Later work can add real cover photography, deeper report content, and MLS-backed live data.
 
-## Mint agent tooling
+## Credits
 
-The repository includes two optional pieces for Mint-assisted 3D work:
-
-- `.codex/config.toml` registers the production
-  [Mint MCP server](https://mcp.mint.gg/) as a repo-scoped OAuth connection.
-- `.agents/skills/mint-threejs-skills` vendors the official
-  [Mint Three.js Skills](https://github.com/mintdotgg/mint-threejs-skills) suite
-  at upstream commit
-  [`e563354`](https://github.com/mintdotgg/mint-threejs-skills/commit/e563354fae765ef49b6b0e2bd6b695554689ba40).
-
-Mint is not required to run or customize the shelf. Contributors who want it
-can trust the repository in Codex and run `codex mcp login mint`; OAuth
-credentials remain outside the repository.
-
-## Contributing and security
-
-Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. Report
-security issues using the private process in [SECURITY.md](SECURITY.md).
+- Original engine: [mintdotgg/bookshelf](https://github.com/mintdotgg/bookshelf) (Complete Shelf)
+- Branding & catalog: Mike Watson / K&M Watson, INC · Antelope Valley
