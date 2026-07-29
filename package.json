@@ -1,7 +1,8 @@
 {
-  "name": "complete-shelf",
+  "name": "the-valley-shelf",
   "version": "0.1.0",
   "private": true,
+  "description": "The Valley Shelf – Antelope Valley Intelligence. Premium interactive 3D bookshelf of market reports and guides by Mike Watson.",
   "engines": {
     "node": ">=22.13.0"
   },
