@@ -1,18 +1,18 @@
 export const siteConfig = {
-  title: "The Complete Shelf — An Interactive 3D Library",
-  applicationName: "The Complete Shelf",
+  title: "The Valley Shelf – Antelope Valley Intelligence",
+  applicationName: "The Valley Shelf",
   description:
-    "Explore a tactile 3D bookshelf with procedural hardcovers and optional contributor-owned cover art.",
-  wordmark: "THE COMPLETE SHELF",
-  collectionName: "AN INTERACTIVE 3D LIBRARY",
-  editionEyebrow: "LIBRARY EDITION",
-  coverImprint: "THE COMPLETE SHELF",
-  coverTagline: "AN INTERACTIVE LIBRARY",
-  spineMark: "CS",
-  amazonLinkLabel: "Purchase on Amazon",
-  bookLinkLabel: "View at Stripe Press",
+    "A premium interactive 3D bookshelf of market reports, neighborhood guides, and strategy playbooks for the Antelope Valley by Mike Watson.",
+  wordmark: "THE VALLEY SHELF",
+  collectionName: "ANTELOPE VALLEY INTELLIGENCE",
+  editionEyebrow: "2026 LIBRARY EDITION",
+  coverImprint: "THE VALLEY SHELF",
+  coverTagline: "ANTELOPE VALLEY INTELLIGENCE",
+  spineMark: "VS",
+  amazonLinkLabel: "View full report",
+  bookLinkLabel: "Open intelligence brief",
   socialImageAlt:
-    "The Complete Shelf, with tactile abstract hardcovers and one book pulled forward on a walnut shelf.",
+    "The Valley Shelf, with tactile hardcover market reports and guides pulled forward on a continuous editorial bookshelf.",
   independentNote:
-    "Independent open-source project. Not affiliated with or endorsed by Stripe.",
+    "Independent project by Mike Watson, Top Antelope Valley Realtor. Built on the open-source Complete Shelf.",
 } as const;
